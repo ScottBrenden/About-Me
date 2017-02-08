@@ -8,7 +8,9 @@ if(confirmQuiz){
   console.log('To bad sucka.');
 }
 
-var YorN = alert('The following questions are yes/no questions. Please answer each with Y or N. Otherwise you may be subject to ridicule.');
+var user = prompt('Now that you agreed to play, what is your name?');
+var YorN = alert('Ok, ' + user + ' the following questions are yes/no questions. Please answer each with Y or N. Otherwise you may be subject to ridicule.');
+
 var quizResponse1 = prompt('Is Scott a ginger?');
 //var done1 = false;
 
@@ -20,8 +22,8 @@ if(quizResponse1.toUpperCase() === 'Y'){
   console.log('No, he is. If you are color blind I won\'t count this point.');
   //done1 = true;
 } else {
-  alert('Y or N means Y or N! You pleb.');
-  quizResponse1 = prompt('Please answer Y or N. Is Scott a ginger?');
+  alert('Y or N means Y or N ' + user + '! You pleb.');
+  //quizResponse1 = prompt('Please answer Y or N. Is Scott a ginger?');
 }
 //}
 
@@ -33,7 +35,7 @@ if (quizResponse2.toUpperCase() === 'Y') {
   console.log('You are corrcet! Unless you submitted something other than N, in which case you failed and have been launched into the pit of dispair.');
 }
 
-var quizResponse3 = prompt('Does Scott ski or snowboard (Y for ski, N for snowboard)? Ok, this is\'t yes/no. My game, my rules. Suck it up.');
+var quizResponse3 = prompt('Does Scott ski or snowboard (Y for ski, N for snowboard)? Ok, this is\'t yes/no. My game, my rules. Suck it up ' + user + '.');
 
 if (quizResponse3.toUpperCase() === 'Y') {
   console.log('For 21 years! He even has done it for a job.');
@@ -54,5 +56,5 @@ var quizResponse5 = prompt('Ok, last one. Did Scott Graduate from WWU?');
 if (quizResponse5.toUpperCase() === 'Y') {
   console.log('Yup with a BS! The \'a\' is important there.');
 } else {
-  console.log('No, hi did. Go Vikings!');
+  console.log('No, he did. Go Vikings!');
 }
