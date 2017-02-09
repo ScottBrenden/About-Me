@@ -6,9 +6,8 @@ body {
 }
 header, footer {
   Background-color: #216430;
-  background-image: url("https://i.imgur.com/6xQJz7c.jpg");
+  background-image: url("https://c1.staticflickr.com/4/3863/31976451233_0d4c6ad586_k.jpg");
   background-size: cover;
-  background-position: center, center;
   margin: -16px -8px 0px -8px;
   color: #fff;
   text-shadow: 3px 2px 0px #000;
@@ -16,10 +15,17 @@ header, footer {
 }
 header {
   font-size: 30px;
+  background-position: center, center;
 }
-div {
+.bio, .edu, .goal, .work {
   background-color: #092415;
   color: #fff;
-  margin: 10px -8px 20px -8px;
+  margin: 10px auto 10px auto;
   padding: 10px;
+}
+footer {
+  background-position: bottom, center;
+}
+.goal {
+  margin-bottom: 25px;
 }
