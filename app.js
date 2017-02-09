@@ -47,30 +47,38 @@ while(!correct && guesses < 5){
   if (question6 == 21){
     if (guesses == 1) {
       console.log('First guess! Either you know Scott, or we should hit up Vegas.');
+      alert('First guess! Either you know Scott, or we should hit up Vegas.');
     } else {
       console.log('You got it!');
+      alert('You got it!');
     }
     correct = true;
   } else if (question6 < 21) {
     if (guesses < 3) {
       console.log('Higher!');
+      alert('Higher!');
     } else {
       console.log('Higher! Last chance!');
+      alert('Higher! Last chance!');
     }
     guesses++;
   } else if (question6 > 21) {
     if (guesses < 3) {
       console.log('Lower.');
+      alert('Lower.');
     } else {
       console.log('Lower. Last chance!');
+      alert('Lower. Last chance!');
     }
     guesses++;
   } else {
     console.log(question6 + ' is not a number...');
+    alert(question6 + ' is not a number...');
     guesses++;
   }
   if (guesses == 5 && !correct){
     console.log('Better luck next time.');
+    alert('Better luck next time.');
   }
 }
 // var quizResponse2 = prompt('Has Scott ever lived outside the great state the is Washington?');
