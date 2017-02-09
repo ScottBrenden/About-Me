@@ -7,7 +7,7 @@ if(confirmQuiz){
 } else {
   console.log('To bad sucka.');
 }
-
+//-----------------------Questions 1-5: Y/N GAME-------------------V
 var user = prompt('Now that you agreed to play, what is your name?');
 var YorN = alert('Ok, ' + user + ' the following questions are yes/no questions. Please answer each with Y or N. Otherwise you may be subject to ridicule.');
 
@@ -38,6 +38,7 @@ for (var i = 0; i < questions.length; i++) {
   }
 }
 
+//----------------Question 6: NUMBER GAME!----------------------V
 var guesses = 1;
 var correct = false;
 
@@ -54,21 +55,21 @@ while(!correct && guesses < 5){
     }
     correct = true;
   } else if (question6 < 21) {
-    if (guesses < 3) {
-      console.log('Higher!');
-      alert('Higher!');
+    if (guesses == 4) {
+      console.log('Guess higher!');
+      alert('Guess higher!');
     } else {
-      console.log('Higher! Last chance!');
-      alert('Higher! Last chance!');
+      console.log('Guess higher! Last chance!');
+      alert('Guess higher! Last chance!');
     }
     guesses++;
   } else if (question6 > 21) {
-    if (guesses < 3) {
-      console.log('Lower.');
-      alert('Lower.');
+    if (guesses == 4) {
+      console.log('Guess lower.');
+      alert('Guess lower.');
     } else {
-      console.log('Lower. Last chance!');
-      alert('Lower. Last chance!');
+      console.log('Guess lower. Last chance!');
+      alert('Guess lower. Last chance!');
     }
     guesses++;
   } else {
@@ -79,6 +80,33 @@ while(!correct && guesses < 5){
   if (guesses == 5 && !correct){
     console.log('Better luck next time.');
     alert('Better luck next time.');
+  }
+}
+
+//--------------------Question 7: MULTI ANSWER GAME-------------------V
+
+for (var i = 0; i < 5; i++){
+  var qustion7 = prompt('What is one country, outside North America, that Scott has been to?');
+  if(qustion7.toUpperCase() === 'NORWAY' || qustion7.toUpperCase() === 'CHILE' || qustion7.toUpperCase() === 'UK' || qustion7.toUpperCase() === 'GREAT BRITAIN'){
+    if(i == 0){
+      console.log('First guess! Nice!');
+      alert('First guess! Nice!');
+    } else {
+      console.log('Correct!');
+      alert('Correct!');
+    }
+    break;
+  } else {
+    if (i == 4) {
+      console.log('Nope. Better luck next time.');
+      alert('Nope. Better luck next time.');
+    } else if (i == 3) {
+      console.log('Nope. One more try.');
+      alert('Nope. One more try.');
+    } else {
+      console.log('Incorrect.');
+      alert('Incorrect.');
+    }
   }
 }
 // var quizResponse2 = prompt('Has Scott ever lived outside the great state the is Washington?');
