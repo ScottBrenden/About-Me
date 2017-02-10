@@ -17,7 +17,7 @@ header {
   font-size: 30px;
   background-position: center, center;
 }
-.bio, .edu, .goal, .work {
+.bio, .edu, .goal, .work, .top10 {
   background-color: #092415;
   color: #fff;
   margin: 10px auto 10px auto;
@@ -26,6 +26,6 @@ header {
 footer {
   background-position: bottom, center;
 }
-.goal {
+.top10 {
   margin-bottom: 25px;
 }
