@@ -7,18 +7,23 @@ if(confirmQuiz){
 } else {
   console.log('To bad sucka.');
 }
+var numCorrect = 0;
 //-----------------------Questions 1-5: Y/N GAME-------------------V
 var user = prompt('Now that you agreed to play, what is your name?');
+var correctAns = ['Y', 'N', 'Y', 'Y', 'Y'];
 function questionsOneToFive(){
   var YorN = alert('Ok, ' + user + ' the following questions are yes/no questions. Please answer each with Y or N. Otherwise you may be subject to ridicule.');
 
-  var questions = ['Is Scott a ginger?', 'Has Scott ever lived outside the great state the is Washington?', 'Does Scott ski or snowboard (Y for ski, N for snowboard)? Ok, this is\'t yes/no. My game, my rules. Suck it up ' + user + '.', 'Is Scott a sports fan?', 'Did Scott Graduate from WWU?'];
+  var questions = ['Is Scott a ginger?', 'Has Scott ever lived outside the great state the is Washington?', 'Does Scott ski or snowboard more (Y for ski, N for snowboard)? Ok, this is\'t yes/no. My game, my rules. Suck it up ' + user + '.', 'Is Scott a sports fan?', 'Did Scott Graduate from WWU?'];
   var Ys = ['Yup! Lucky guy.', 'No, why would he? Washington is clearly the best place to live.', 'Yup! He has even done it professionally .', 'Oh yeah! Probably a bit too much.', 'Yup with a BS! The \'a\' is important there.'];
-  var Ns = ['No, he is. If you are color blind I won\'t count this point.', 'You are corrcet! Unless you submitted something other than N, in which case you failed and have been launched into the pit of dispair.', 'Ok, it was a trick question he does both.', 'Nope, he is. Well except soccer.', 'No, he did. Go Vikings!'];
+  var Ns = ['No, he is. If you are color blind I won\'t count this point.', 'You are corrcet! Washington is the best.', 'No, learned to snowboard years after skiing.', 'Nope, he is. Well except soccer.', 'No, he did. Go Vikings!'];
   var answers = [];
 
   for (var i = 0; i < questions.length; i++) {
     var response = prompt(questions[i]);
+    if(response.toUpperCase() === correctAns[i]) {
+      numCorrect++;
+    }
     var done = false;
     while (!done) {
       if(response.toUpperCase() === 'Y'){
@@ -56,23 +61,24 @@ function numGame(){
         console.log('You got it!');
         alert('You got it!');
       }
+      numCorrect++;
       correct = true;
     } else if (question6 < 21) {
-      if (guesses == 4) {
-        console.log('Guess higher!');
-        alert('Guess higher!');
-      } else {
+      if (guesses == 3) {
         console.log('Guess higher! Last chance!');
         alert('Guess higher! Last chance!');
+      } else {
+        console.log('Guess higher!');
+        alert('Guess higher!');
       }
       guesses++;
     } else if (question6 > 21) {
-      if (guesses == 4) {
-        console.log('Guess lower.');
-        alert('Guess lower.');
-      } else {
+      if (guesses == 3) {
         console.log('Guess lower. Last chance!');
         alert('Guess lower. Last chance!');
+      } else {
+        console.log('Guess lower.');
+        alert('Guess lower.');
       }
       guesses++;
     } else {
@@ -89,22 +95,32 @@ function numGame(){
 numGame();
 //--------------------Question 7: MULTI ANSWER GAME-------------------V
 function multiGame(){
-  for (var i = 0; i < 5; i++){
-    var qustion7 = prompt('What is one country, outside North America, that Scott has been to?');
-    if(qustion7.toUpperCase() === 'NORWAY' || qustion7.toUpperCase() === 'CHILE' || qustion7.toUpperCase() === 'UK' || qustion7.toUpperCase() === 'GREAT BRITAIN'){
-      if(i == 0){
-        console.log('First guess! Nice!');
-        alert('First guess! Nice!');
-      } else {
-        console.log('Correct!');
-        alert('Correct!');
+  var countries = ['NORWAY', 'CHILE', 'UK', 'GREAT BRITAIN'];
+  var correct = false;
+  for (var i = 0; i < 6; i++){
+    var question7 = prompt('What is one country, outside North America, that Scott has been to?');
+    for (var j = 0; j < countries.length; j++){
+      if(question7.toUpperCase() === countries[j]){
+        correct = true;
+        break;
       }
+    }
+    if(correct){
+      if(i == 0){
+        console.log('First guess! Nice! He has been to Norway, Chile and the UK');
+        alert('First guess! Nice! He has been to Norway, Chile and the UK');
+      } else {
+        console.log('Correct! He has been to Norway, Chile and the UK');
+        alert('Correct! He has been to Norway, Chile and the UK');
+      }
+
+      numCorrect++;
       break;
     } else {
-      if (i == 4) {
+      if (i == 5) {
         console.log('Nope. Better luck next time.');
         alert('Nope. Better luck next time.');
-      } else if (i == 3) {
+      } else if (i == 4) {
         console.log('Nope. One more try.');
         alert('Nope. One more try.');
       } else {
@@ -115,6 +131,9 @@ function multiGame(){
   }
 }
 multiGame();
+console.log(user + ', you got ' + numCorrect + '/7 correct.');
+alert(user + ', you got ' + numCorrect + '/7 correct.');
+
 // var quizResponse2 = prompt('Has Scott ever lived outside the great state the is Washington?');
 
 // if (quizResponse2.toUpperCase() === 'Y') {
