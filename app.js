@@ -1,13 +1,19 @@
 'use strict';
 
 var confirmQuiz = confirm('Hello, would you like to play a game?');
+var numCorrect = 0;
 
 if(confirmQuiz){
   console.log('Awesome! Lets do this!');
 } else {
   console.log('To bad sucka.');
 }
-var numCorrect = 0;
+
+questionsOneToFive();
+numGame();
+multiGame();
+numberCorrect();
+
 //-----------------------Questions 1-5: Y/N GAME-------------------V
 var user = prompt('Now that you agreed to play, what is your name?');
 var correctAns = ['Y', 'N', 'Y', 'Y', 'Y'];
@@ -44,7 +50,7 @@ function questionsOneToFive(){
     }
   }
 }
-questionsOneToFive();
+
 //----------------Question 6: NUMBER GAME!----------------------V
 function numGame(){
   var guesses = 1;
@@ -92,7 +98,7 @@ function numGame(){
     }
   }
 }
-numGame();
+
 //--------------------Question 7: MULTI ANSWER GAME-------------------V
 function multiGame(){
   var countries = ['NORWAY', 'CHILE', 'UK', 'GREAT BRITAIN'];
@@ -130,9 +136,8 @@ function multiGame(){
     }
   }
 }
-multiGame();
+
 function numberCorrect(){
   console.log(user + ', you got ' + numCorrect + '/7 correct.');
   alert(user + ', you got ' + numCorrect + '/7 correct.');
 }
-numberCorrect();
