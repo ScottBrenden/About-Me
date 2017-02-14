@@ -131,45 +131,8 @@ function multiGame(){
   }
 }
 multiGame();
-console.log(user + ', you got ' + numCorrect + '/7 correct.');
-alert(user + ', you got ' + numCorrect + '/7 correct.');
-
-// var quizResponse2 = prompt('Has Scott ever lived outside the great state the is Washington?');
-
-// if (quizResponse2.toUpperCase() === 'Y') {
-//   alert('No, why would he? Washington is clearly the best place to live.');
-//   console.log('No, why would he? Washington is clearly the best place to live.');
-// } else {
-//   alert('You are corrcet! Unless you submitted something other than N, in which case you failed and have been launched into the pit of dispair.');
-//   console.log('You are corrcet! Unless you submitted something other than N, in which case you failed and have been launched into the pit of dispair.');
-// }
-
-// var quizResponse3 = prompt();
-
-// if (quizResponse3.toUpperCase() === 'Y') {
-//   alert('For 21 years! He even has done it for a job.');
-//   console.log('For 21 years! He even has done it for a job.');
-// } else {
-//   alert('Ok, it was a trick question he does both.');
-//   console.log('Ok, it was a trick question he does both.');
-// }
-
-// var quizResponse4 = prompt();
-
-// if (quizResponse4.toUpperCase() === 'Y') {
-//   alert('Oh yeah! Probably a bit too much.');
-//   console.log('Oh yeah! Probably a bit too much.');
-// } else {
-//   alert('Nope, he is. Well except soccer.');
-//   console.log('Nope, he is. Well except soccer.');
-// }
-
-// var quizResponse5 = prompt('Ok, last one. Did Scott Graduate from WWU?');
-
-// if (quizResponse5.toUpperCase() === 'Y') {
-//   alert('Yup with a BS! The \'a\' is important there.');
-//   console.log('Yup with a BS! The \'a\' is important there.');
-// } else {
-//   alert('No, he did. Go Vikings!');
-//   console.log('No, he did. Go Vikings!');
-// }
+function numberCorrect(){
+  console.log(user + ', you got ' + numCorrect + '/7 correct.');
+  alert(user + ', you got ' + numCorrect + '/7 correct.');
+}
+numberCorrect();
